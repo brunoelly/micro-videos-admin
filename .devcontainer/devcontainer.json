@@ -1,0 +1,35 @@
+{
+	"name": "Micro Videos Python",
+	"dockerComposeFile": [
+		"../docker-compose.yaml",
+		"docker-compose.yml"
+	],
+	"service": "python-app",
+	"workspaceFolder": "/home/python/app/src",
+	
+	// Updated settings and extensions syntax
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.pythonPath": "/usr/local/bin/python"
+			},
+			"extensions": [
+				"ms-python.python",
+				"sourcery.sourcery",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+
+	// Uncomment the next line to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment to keep your containers running after VS Code shuts down.
+	// "shutdownAction": "none",
+
+	// Uncomment to run commands after the container is created.
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+
+	// Uncomment to connect as a non-root user if you've added one.
+	"remoteUser": "python"
+}

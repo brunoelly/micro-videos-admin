@@ -6,11 +6,9 @@ from category.domain.entities import Category
 class TestCategory(unittest.TestCase):
 
     def test_if_is_dataclass(self):
-        # Verifica se a classe é um dataclass
         self.assertTrue(is_dataclass(Category))
 
     def test_constructor(self):
-        # Teste com todos os parâmetros
         category = Category('Movie', 'test', True, datetime.now())
         self.assertEqual(category.name, 'Movie')
         self.assertEqual(category.description, 'test')
@@ -31,11 +29,9 @@ class TestCategory(unittest.TestCase):
         self.assertEqual(category.created_at, created_at)
 
     def test_if_created_at_is_generated_in_constructor(self):
-        # Teste correto: agora usa valores padrão
-        category1 = Category(name='Movie 1')  # Apenas o nome, outros são padrão
-        category2 = Category(name='Movie 2')  # Apenas o nome, outros são padrão
+        category1 = Category(name='Movie 1')
+        category2 = Category(name='Movie 2')
         
-        # Verifica se os timestamps são diferentes
         self.assertNotEqual(
             category1.created_at.timestamp(),
             category2.created_at.timestamp()
